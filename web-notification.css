@@ -1,0 +1,27 @@
+#status {
+	text-align: center;
+	width: 140px;
+	padding: 5px;
+	background: #ccc;
+	border-radius: 4px 4px 4px 4px;	
+}
+
+#status .stopped {
+	color : red;
+	font-style: italic;
+}
+#status .started {
+	color : green;
+	font-style: italic;
+}
+
+#support {
+	text-align: center;
+	width: 300px;
+	padding: 5px;
+	border: solid 1px;
+	border-radius: 4px 4px 4px 4px;	
+}
+td {
+	padding: 8px;
+}
