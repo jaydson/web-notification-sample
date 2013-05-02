@@ -46,7 +46,10 @@
 
 		this.authorize = function () {
 			var notifier = this;
-			window.Notification.requestPermission(function(perm) {				
+			if (window.webkitNotifications && window.webkitNotifications.checkPermission() == 0) {
+				notifier.start();
+			}
+			window.Notification.requestPermission(function(perm) {
 		        notifier.status = perm;
 		        notifier.start();
 		    });
@@ -73,12 +76,23 @@
 			document.querySelector('#auth').addEventListener('click', function () {
 				notifier.authorize();
 			});
+			document.querySelector('#stop').addEventListener('click', function () {
+				notifier.stop();
+			});
 		};
 
 		this.isAuth = function () {
 			return this.status === 'granted' || 
 					Notification.permission === 'granted' ||
 					window.webkitNotifications.checkPermission() === 0;
+		};
+
+		this.stop = function () {
+			var statusElem = document.querySelector('#statusvalue');	
+			window.clearInterval(intervalId);	
+			statusElem.setAttribute('class','stopped');
+			statusElem.innerHTML = 'Stopped';
+
 		};
 
 		this.start = function () {
@@ -101,7 +115,7 @@
 		this.init = function () {
 			this.addEvents();
 			this.authorize();
-			this.start();			
+			//this.start();			
 		};
 	};
 

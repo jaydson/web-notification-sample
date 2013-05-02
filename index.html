@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Web Notification Sample</title>
 	<link rel="stylesheet" type="text/css" href="web-notification.css">
+	<link rel="shortcut icon" href="icon.png">
 </head>
 <body>
 	<div>
@@ -11,7 +12,11 @@
 		Click <button id="auth">here</button> to authorize and start (If you've not yet authorized), and wait for random nice quotes while you're working :) <br/><br />
 	</div>
 
-	<div id="status">Status: <span id="statusvalue" class="stopped">Stopped</span></div> <br /><br /></div>
+	<div id="status">
+		Status: 
+		<span id="statusvalue" class="stopped">Stopped</span>
+		<button id="stop">Stop</button>
+	</div> <br /><br />
 
 	<div id="support">
 		Support for WebNotification:
