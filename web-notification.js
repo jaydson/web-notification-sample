@@ -64,6 +64,11 @@
 		        body: quote,
 		        tag: "sometag",
 		    });
+
+		    notification.onclick = function () {
+				alert('s');
+			};
+
 		    notification.onshow = function() {
 		    	setTimeout(function () {		    		
 		    		notification.close();
