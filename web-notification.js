@@ -66,7 +66,7 @@
 		    });
 
 		    notification.onclick = function () {
-				alert('s');
+				
 			};
 
 		    notification.onshow = function() {
